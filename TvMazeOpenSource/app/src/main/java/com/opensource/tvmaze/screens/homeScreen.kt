@@ -74,7 +74,7 @@ fun ScreenCard(context: Context, movie: MovieData){
                 Text(text = "No Image available", fontSize = 6.sp)}
             Column (Modifier.height(100.dp)){
                 Text(text = movie.show.name, fontSize = 22.sp, fontWeight = FontWeight.Bold)
-                Text(text = movie.show.summary,//movie.show.summary,
+                Text(text = movie.show.summary.replace(Regex("<.*?>"), ""),//movie.show.summary,
                     fontSize = 12.sp, fontWeight = FontWeight.Light)
             }
         }
