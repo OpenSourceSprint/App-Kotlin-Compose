@@ -27,7 +27,7 @@ fun NoInternet(context: Context){
         verticalArrangement = Arrangement.Center)
     {
         Text(text = "No internet connection!", fontSize = 30.sp, fontWeight = FontWeight.Bold)
-        Toast.makeText(LocalContext.current,"Network Issues!", Toast.LENGTH_SHORT)
+        Toast.makeText(LocalContext.current,"Network Issues!", Toast.LENGTH_SHORT).show()
         Button(onClick = {
             MainActivity.start(context)
         }) {

@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -36,11 +38,11 @@ import com.opensource.tvmaze.network.MovieData
 
 @Composable
 fun HomeScreenLayout2(context:Context,arr:Array<MovieData>){
-    Column(
+    LazyColumn(
         Modifier
             .fillMaxSize()
             .background(Color.White)){
-        for(movie in arr){
+        items(arr){movie ->
             ScreenCard(context = context, movie = movie)
             Spacer(modifier = Modifier.width(16.dp))
         }
