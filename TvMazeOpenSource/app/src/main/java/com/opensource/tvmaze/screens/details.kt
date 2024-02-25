@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,6 +31,7 @@ fun DetailsScreenLayout(
 ){
     Column(
         Modifier
+            .verticalScroll(rememberScrollState())
             .fillMaxSize()
             .background(Color.White), horizontalAlignment = Alignment.CenterHorizontally)
     {
@@ -36,7 +39,7 @@ fun DetailsScreenLayout(
         Text("$name", fontSize = 35.sp)
         //image
         Row(Modifier.fillMaxWidth()) {
-            if(medium != null){GlideImage(model = medium, contentDescription = "Movie Image")}
+            if(medium != null){GlideImage(model = medium, contentDescription = "Movie Image", modifier = Modifier.fillMaxWidth())}
             else{Text(text = "No Image available", fontSize = 16.sp)}
         }
         //score
